@@ -198,11 +198,11 @@ var sortableDecorator = (function ( global, factory ) {
 	preventDefault = function ( event ) { event.preventDefault(); };
 
 	Ractive.decorators.sortable = sortable;
-	
-	return sortable
+
+	return sortable;
 }));
 
 // Common JS (i.e. browserify) environment
 if ( typeof module !== 'undefined' && module.exports) {
-	module.exports = sortableDecorator
+	module.exports = sortableDecorator;
 }
