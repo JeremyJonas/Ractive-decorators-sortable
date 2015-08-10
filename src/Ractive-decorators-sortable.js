@@ -189,6 +189,8 @@ var sortableDecorator = (function ( global, factory ) {
 
 		// add source back to array in new location
 		array.splice( sourceIndex, 0, source );
+
+		ractive.update( sourceArray );
 	};
 
 	removeTargetClass = function () {
