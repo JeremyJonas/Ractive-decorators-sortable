@@ -58,7 +58,7 @@
 
 */
 
-(function ( global, factory ) {
+var sortableDecorator = (function ( global, factory ) {
 
 	'use strict';
 
@@ -189,6 +189,8 @@
 
 		// add source back to array in new location
 		array.splice( sourceIndex, 0, source );
+
+		ractive.update( sourceArray );
 	};
 
 	removeTargetClass = function () {
@@ -199,4 +201,10 @@
 
 	Ractive.decorators.sortable = sortable;
 
+	return sortable;
 }));
+
+// Common JS (i.e. browserify) environment
+if ( typeof module !== 'undefined' && module.exports) {
+	module.exports = sortableDecorator;
+}
