@@ -64,12 +64,12 @@ var sortableDecorator = (function ( global, factory ) {
 
 	// Common JS (i.e. browserify) environment
 	if ( typeof module !== 'undefined' && module.exports && typeof require === 'function' ) {
-		factory( require( 'Ractive' ) );
+		factory( require( 'ractive' ) );
 	}
 
 	// AMD?
 	else if ( typeof define === 'function' && define.amd ) {
-		define([ 'Ractive' ], factory );
+		define([ 'ractive' ], factory );
 	}
 
 	// browser global
@@ -126,7 +126,7 @@ var sortableDecorator = (function ( global, factory ) {
 	dragstartHandler = function ( event ) {
 		var storage = this._ractive, lastDotIndex;
 
-		sourceKeypath = storage.keypath;
+		sourceKeypath = storage.keypath.str;
 
 		// this decorator only works with array members!
 		lastDotIndex = sourceKeypath.lastIndexOf( '.' );
@@ -156,7 +156,7 @@ var sortableDecorator = (function ( global, factory ) {
 			return;
 		}
 
-		targetKeypath = this._ractive.keypath;
+		targetKeypath = this._ractive.keypath.str;
 
 		// this decorator only works with array members!
 		lastDotIndex = targetKeypath.lastIndexOf( '.' );
