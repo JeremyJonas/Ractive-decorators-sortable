@@ -191,6 +191,7 @@ var sortableDecorator = (function ( global, factory ) {
 		array.splice( sourceIndex, 0, source );
 
 		ractive.update( sourceArray );
+		ractive.fire("sort", sourceKeypath, targetKeypath);
 	};
 
 	removeTargetClass = function () {
