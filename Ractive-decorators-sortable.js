@@ -3,7 +3,7 @@
 	Ractive-decorators-sortable
 	===========================
 
-	Version 0.1.0.
+	Version 0.1.1.
 
 	This plugin adds a 'sortable' decorator to Ractive, which enables
 	elements that correspond to array members to be re-ordered using
